@@ -42,15 +42,12 @@ int16_t cursor_y = 15;
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 void setup() {
- 
   display.begin( SSD1306_SWITCHCAPVCC, OLED_ADDR);
 
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
 
   Serial.begin(9600);
-
-  delay(2000); 
 }
 
 void draw_lock() {
@@ -58,8 +55,6 @@ void draw_lock() {
 }
 
 void draw_signal_strength(int strength) {
-  Serial.print(strength); 
-
   if (-30 < strength) {
     display.drawBitmap(10, cursor_y - 1, bars_3, 8, 8, 1);
   } else if ((-30 > strength) && ( -50 < strength)) {
@@ -90,7 +85,6 @@ void loop() {
   display.setTextColor(WHITE);
   
   Serial.println("Wifi scan started");
-
   int n = WiFi.scanNetworks();
   Serial.println("Wifi scan ended");
 
@@ -109,7 +103,7 @@ void loop() {
       
       draw_signal_strength(WiFi.RSSI(i));
 
-      if(WiFi.encryptionType(i) == ENC_TYPE_NONE)
+      if(ENC_TYPE_NONE == WiFi.encryptionType(i))
       {
           Serial.println(" <<***OPEN***>>");      
       }else{
@@ -124,8 +118,6 @@ void loop() {
 
         cursor_y = cursor_y + 10;
       }
-
-      delay(10);
     }
   }
   Serial.println("");

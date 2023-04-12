@@ -12,6 +12,8 @@ the nodemcu makes use of wifi and i2c/display driver
 
 it will scan for wifi networks and prints out information via serial connection and on display
 
+hint: i read, that the order is based on signal strength. but that does not seem to be true
+
 ## wiring
 
 | Display | Pin Label | Pin Description  |
