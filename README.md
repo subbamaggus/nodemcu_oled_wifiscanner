@@ -2,9 +2,11 @@
 
 ## simple example
 
-this simple example demonstrates how to use
+## setup
+hardware used:
 - NodeMCU V3
-- Adafruit OLED Display 128x32 px
+- Adafruit OLED Display 128x64 px
+- Breadboards
 
 ## function
 
@@ -16,18 +18,16 @@ hint: i read, that the order is based on signal strength. but that does not seem
 
 ## wiring
 
-| Display | Pin Label | Pin Description  |
-|---------|-----------|------------------|
-| VCC     | 3V        | 3.3V             |
-| GND     | G         | GND              |
-| SCL     | D1        | GPIO5            |
-| SDA     | D2        | GPIO4            |
-
-
 https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
-
 Section: ESP8266 12-E NodeMCU Kit
 
+### Display <> NodeMCU
+| Display | Pin Label | Pin Description |
+|---------|-----------|-----------------|
+| VCC     | 3V        | 3.3V            |
+| GND     | G         | GND             |
+| SCL     | D1        | GPIO5           |
+| SDA     | D2        | GPIO4           |
 
 ## thanks to
 
